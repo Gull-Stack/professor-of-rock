@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Community Platform — Strategy & Plan</title>
+    <title>Music.com — Platform Architecture</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 40px 20px;
         }
@@ -77,61 +77,130 @@
 
         /* Section */
         section {
-            margin-bottom: 60px;
+            margin-bottom: 48px;
         }
 
         h2 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             color: var(--dark);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         h2 span {
-            font-size: 32px;
+            font-size: 28px;
         }
 
-        /* Vision Card */
-        .vision-card {
-            background: linear-gradient(135deg, var(--primary) 0%, #5B21B6 100%);
-            color: white;
-            border-radius: 16px;
-            padding: 40px;
-            margin-bottom: 40px;
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--gray-700);
         }
 
-        .vision-card h3 {
-            font-size: 24px;
+        /* Cards */
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 28px;
             margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
 
+        .card p {
+            color: var(--gray-700);
+            margin-bottom: 16px;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Feature Grid */
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 16px;
         }
 
-        .feature-item {
-            background: rgba(255,255,255,0.15);
-            padding: 16px;
-            border-radius: 8px;
-            font-size: 14px;
+        .feature-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-left: 4px solid var(--primary);
         }
 
-        .feature-item strong {
-            display: block;
+        .feature-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin: 0;
+        }
+
+        .feature-card ul {
+            margin: 12px 0 0 0;
+            padding-left: 20px;
+        }
+
+        .feature-card li {
+            font-size: 14px;
+            color: var(--gray-600);
             margin-bottom: 4px;
         }
 
-        /* Comparison Table */
+        /* Circle Features */
+        .circle-section {
+            background: linear-gradient(135deg, var(--gray-900) 0%, #374151 100%);
+            border-radius: 16px;
+            padding: 32px;
+            color: white;
+            margin-bottom: 32px;
+        }
+
+        .circle-section h2 {
+            color: white;
+        }
+
+        .circle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .circle-feature {
+            background: rgba(255,255,255,0.1);
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .circle-feature strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+
+        .circle-feature span {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        /* Tables */
         .table-card {
             background: var(--white);
-            border-radius: 16px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
 
         table {
@@ -142,18 +211,14 @@
         th {
             background: var(--gray-900);
             color: white;
-            padding: 16px 20px;
+            padding: 14px 20px;
             text-align: left;
             font-weight: 600;
-            font-size: 14px;
-        }
-
-        th:first-child {
-            width: 35%;
+            font-size: 13px;
         }
 
         td {
-            padding: 16px 20px;
+            padding: 14px 20px;
             border-bottom: 1px solid var(--gray-100);
             font-size: 14px;
         }
@@ -168,249 +233,108 @@
 
         .check { color: var(--success); font-weight: 600; }
         .partial { color: var(--warning); font-weight: 600; }
-        .no { color: var(--danger); font-weight: 600; }
 
-        .feature-name {
-            font-weight: 500;
+        /* Lists */
+        .list-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
 
-        /* Options Cards */
-        .options-grid {
+        .list-card ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .list-card li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-100);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .list-card li:last-child {
+            border-bottom: none;
+        }
+
+        .list-card .icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .list-card .content strong {
+            display: block;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .list-card .content span {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        /* Architecture */
+        .arch-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            gap: 16px;
         }
 
-        @media (max-width: 800px) {
-            .options-grid {
+        @media (max-width: 768px) {
+            .arch-grid {
                 grid-template-columns: 1fr;
             }
         }
 
-        .option-card {
+        .arch-card {
             background: var(--white);
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            position: relative;
-        }
-
-        .option-card.recommended {
-            border: 3px solid var(--primary);
-        }
-
-        .option-card.recommended::before {
-            content: 'RECOMMENDED';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: white;
-            padding: 4px 16px;
             border-radius: 12px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .option-card h3 {
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
-
-        .option-card .price {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 16px;
-        }
-
-        .option-card .price span {
-            font-size: 14px;
-            font-weight: 400;
-            color: var(--gray-500);
-        }
-
-        .option-card ul {
-            list-style: none;
-            margin-bottom: 20px;
-        }
-
-        .option-card li {
-            padding: 8px 0;
-            font-size: 14px;
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-        }
-
-        .option-card li::before {
-            content: '✓';
-            color: var(--success);
-            font-weight: 700;
-        }
-
-        .option-card .cons li::before {
-            content: '✗';
-            color: var(--danger);
-        }
-
-        .option-card h4 {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--gray-500);
-            margin: 20px 0 12px;
-        }
-
-        /* Timeline */
-        .timeline {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-
-        .timeline-item {
-            display: flex;
-            gap: 24px;
-            padding-bottom: 32px;
-            position: relative;
-        }
-
-        .timeline-item:not(:last-child)::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 48px;
-            bottom: 0;
-            width: 2px;
-            background: var(--gray-300);
-        }
-
-        .timeline-marker {
-            width: 42px;
-            height: 42px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 16px;
-            flex-shrink: 0;
-        }
-
-        .timeline-content h4 {
-            font-size: 18px;
-            margin-bottom: 4px;
-        }
-
-        .timeline-content .duration {
-            font-size: 13px;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .timeline-content p {
-            color: var(--gray-500);
-            font-size: 14px;
-        }
-
-        .timeline-content ul {
-            margin-top: 12px;
-            margin-left: 20px;
-        }
-
-        .timeline-content li {
-            font-size: 14px;
-            color: var(--gray-700);
-            margin-bottom: 4px;
-        }
-
-        /* Budget */
-        .budget-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-
-        .budget-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-        }
-
-        .budget-item {
-            background: var(--gray-100);
             padding: 24px;
-            border-radius: 12px;
-        }
-
-        .budget-item h4 {
-            font-size: 14px;
-            color: var(--gray-500);
-            margin-bottom: 8px;
-        }
-
-        .budget-item .amount {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--dark);
-        }
-
-        .budget-item .amount span {
-            font-size: 16px;
-            color: var(--gray-500);
-            font-weight: 400;
-        }
-
-        .budget-item p {
-            font-size: 13px;
-            color: var(--gray-500);
-            margin-top: 8px;
-        }
-
-        /* CTA */
-        .cta-section {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             text-align: center;
-            padding: 60px 40px;
-            background: linear-gradient(135deg, var(--gray-900) 0%, var(--dark) 100%);
-            border-radius: 16px;
-            color: white;
         }
 
-        .cta-section h2 {
-            color: white;
-            justify-content: center;
+        .arch-card .icon {
+            font-size: 32px;
             margin-bottom: 12px;
         }
 
-        .cta-section p {
-            color: var(--gray-300);
-            margin-bottom: 24px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 16px 40px;
-            border-radius: 8px;
+        .arch-card h4 {
+            font-size: 14px;
             font-weight: 600;
-            font-size: 16px;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 8px;
+            color: var(--dark);
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
+        .arch-card p {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin: 0;
         }
+
+        /* Taxonomy */
+        .taxonomy-visual {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .taxonomy-tree {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        .taxonomy-tree .level-0 { color: var(--primary); font-weight: 700; }
+        .taxonomy-tree .level-1 { margin-left: 24px; color: var(--gray-700); }
+        .taxonomy-tree .level-2 { margin-left: 48px; color: var(--gray-500); }
+        .taxonomy-tree .level-3 { margin-left: 72px; color: var(--gray-400); font-size: 13px; }
 
         /* Footer */
         footer {
@@ -424,332 +348,420 @@
 <body>
     <div class="container">
         <header>
-            <div class="badge">Platform Strategy</div>
-            <h1>Music Community Platform</h1>
-            <p>A comprehensive plan for building the ultimate rock music fan community — from video archives to live events to artist pages.</p>
+            <div class="badge">Platform Notes</div>
+            <h1>Music.com</h1>
+            <p>Building a Circle-style community platform for music fans — video archives, live events, subscriptions, and artist pages.</p>
         </header>
 
-        <!-- Vision -->
-        <section>
-            <div class="vision-card">
-                <h3>🎸 The Vision</h3>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <strong>Community Hub</strong>
-                        Fan boards, posting, commenting, likes — like a private Facebook Group but better
-                    </div>
-                    <div class="feature-item">
-                        <strong>Video Library</strong>
-                        Every music video ever — searchable by decade, genre, and band
-                    </div>
-                    <div class="feature-item">
-                        <strong>Live Streaming</strong>
-                        Events, shows, trainings, podcasts — all in one place
-                    </div>
-                    <div class="feature-item">
-                        <strong>Subscriptions</strong>
-                        Tiered memberships with paywalled premium content
-                    </div>
-                    <div class="feature-item">
-                        <strong>Artist Pages</strong>
-                        Dedicated pages for every artist with bios, discographies, videos
-                    </div>
-                    <div class="feature-item">
-                        <strong>Merch Store</strong>
-                        Integrated e-commerce for branded merchandise
-                    </div>
-                    <div class="feature-item">
-                        <strong>Competitions</strong>
-                        Voting, contests, fan engagement features
-                    </div>
-                    <div class="feature-item">
-                        <strong>Music Streaming</strong>
-                        Curated playlists and embedded music playback
-                    </div>
+        <!-- Circle Feature Reference -->
+        <section class="circle-section">
+            <h2><span>⭕</span> Circle Features to Recreate</h2>
+            <p style="opacity: 0.8; margin-bottom: 16px;">Core functionality we need to match or exceed:</p>
+            <div class="circle-grid">
+                <div class="circle-feature">
+                    <strong>Spaces</strong>
+                    <span>Organized community sections (like channels)</span>
+                </div>
+                <div class="circle-feature">
+                    <strong>Posts & Comments</strong>
+                    <span>Rich text, media, threaded replies</span>
+                </div>
+                <div class="circle-feature">
+                    <strong>Member Profiles</strong>
+                    <span>Bios, avatars, activity history</span>
+                </div>
+                <div class="circle-feature">
+                    <strong>Events & Live</strong>
+                    <span>Live streaming, event calendar</span>
+                </div>
+                <div class="circle-feature">
+                    <strong>Paywalls</strong>
+                    <span>Tiered access, subscription gating</span>
+                </div>
+                <div class="circle-feature">
+                    <strong>Courses/Content</strong>
+                    <span>Drip content, progress tracking</span>
+                </div>
+                <div class="circle-feature">
+                    <strong>DMs & Chat</strong>
+                    <span>Member-to-member messaging</span>
+                </div>
+                <div class="circle-feature">
+                    <strong>Notifications</strong>
+                    <span>Email + push + in-app</span>
+                </div>
+                <div class="circle-feature">
+                    <strong>Moderation</strong>
+                    <span>Admin tools, roles, permissions</span>
+                </div>
+                <div class="circle-feature">
+                    <strong>Analytics</strong>
+                    <span>Member engagement, content performance</span>
                 </div>
             </div>
         </section>
 
-        <!-- Comparison Table -->
+        <!-- Music.com Specific Features -->
         <section>
-            <h2><span>📊</span> Platform Comparison</h2>
+            <h2><span>🎸</span> Music.com-Specific Features</h2>
+            <p style="color: var(--gray-500); margin-bottom: 20px;">Beyond Circle's core — what makes this a music platform:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🎬 Video Library</h4>
+                    <p>Every music video ever — browsable by decade, genre, band</p>
+                    <ul>
+                        <li>YouTube/Vimeo embeds</li>
+                        <li>Custom taxonomy</li>
+                        <li>Search + filters</li>
+                        <li>Playlists / favorites</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🎤 Artist Pages</h4>
+                    <p>Dedicated pages for every artist</p>
+                    <ul>
+                        <li>Bio + discography</li>
+                        <li>All videos in one place</li>
+                        <li>Interview clips</li>
+                        <li>Fan discussions</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🏆 Competitions / Voting</h4>
+                    <p>Fan engagement through interactive features</p>
+                    <ul>
+                        <li>Best song brackets</li>
+                        <li>Album rankings</li>
+                        <li>User-submitted polls</li>
+                        <li>Leaderboards</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>💃 Dance / Choreography</h4>
+                    <p>Video section for dance content</p>
+                    <ul>
+                        <li>Tutorial uploads</li>
+                        <li>Fan submissions</li>
+                        <li>Categorized by song</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🛍️ Merch Store</h4>
+                    <p>Integrated e-commerce</p>
+                    <ul>
+                        <li>Shopify embed or custom</li>
+                        <li>Artist-specific merch</li>
+                        <li>Member discounts</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🎵 Music Streaming</h4>
+                    <p>Curated listening experiences</p>
+                    <ul>
+                        <li>Spotify embeds</li>
+                        <li>Curated playlists</li>
+                        <li>Album of the week</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Taxonomy -->
+        <section>
+            <h2><span>🗂️</span> Content Taxonomy</h2>
+            <div class="taxonomy-visual">
+                <div class="taxonomy-tree">
+                    <div class="level-0">📁 DECADES</div>
+                    <div class="level-1">├── 1960s</div>
+                    <div class="level-1">├── 1970s</div>
+                    <div class="level-1">├── 1980s</div>
+                    <div class="level-1">├── 1990s</div>
+                    <div class="level-1">└── 2000s+</div>
+                    <br>
+                    <div class="level-0">📁 GENRES</div>
+                    <div class="level-1">├── Classic Rock</div>
+                    <div class="level-1">├── Hard Rock / Metal</div>
+                    <div class="level-1">├── Pop Rock</div>
+                    <div class="level-1">├── Progressive Rock</div>
+                    <div class="level-1">├── Southern Rock</div>
+                    <div class="level-1">├── Punk / New Wave</div>
+                    <div class="level-1">└── Blues Rock</div>
+                    <br>
+                    <div class="level-0">📁 ARTISTS (examples)</div>
+                    <div class="level-1">├── The Beach Boys</div>
+                    <div class="level-2">├── Videos (45)</div>
+                    <div class="level-2">├── Interviews (12)</div>
+                    <div class="level-2">├── Discography</div>
+                    <div class="level-2">└── Fan Board</div>
+                    <div class="level-1">├── Fleetwood Mac</div>
+                    <div class="level-1">├── Journey</div>
+                    <div class="level-1">└── [500+ more...]</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section>
+            <h2><span>🛠️</span> Technical Architecture</h2>
+            <div class="arch-grid">
+                <div class="arch-card">
+                    <div class="icon">⚡</div>
+                    <h4>Frontend</h4>
+                    <p>Next.js 15 + TypeScript + Tailwind CSS</p>
+                </div>
+                <div class="arch-card">
+                    <div class="icon">🗄️</div>
+                    <h4>Database</h4>
+                    <p>Supabase (Postgres + Auth + Realtime + Storage)</p>
+                </div>
+                <div class="arch-card">
+                    <div class="icon">💳</div>
+                    <h4>Payments</h4>
+                    <p>Stripe (subscriptions + one-time)</p>
+                </div>
+                <div class="arch-card">
+                    <div class="icon">📺</div>
+                    <h4>Video</h4>
+                    <p>YouTube/Vimeo embeds + Mux for live</p>
+                </div>
+                <div class="arch-card">
+                    <div class="icon">🔍</div>
+                    <h4>Search</h4>
+                    <p>Algolia or Supabase full-text</p>
+                </div>
+                <div class="arch-card">
+                    <div class="icon">🚀</div>
+                    <h4>Hosting</h4>
+                    <p>Vercel (frontend) + Supabase (backend)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Database Schema -->
+        <section>
+            <h2><span>📊</span> Core Data Models</h2>
             <div class="table-card">
                 <table>
                     <thead>
                         <tr>
-                            <th>Feature</th>
-                            <th>Circle</th>
-                            <th>Mighty Networks</th>
-                            <th>Custom Build</th>
+                            <th>Model</th>
+                            <th>Key Fields</th>
+                            <th>Relationships</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="feature-name">Community / Posts / Comments</td>
-                            <td class="check">✓ Full support</td>
-                            <td class="check">✓ Full support</td>
-                            <td class="partial">⚡ Build it</td>
+                            <td><strong>users</strong></td>
+                            <td>id, email, name, avatar, bio, tier, created_at</td>
+                            <td>→ posts, comments, subscriptions</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Live Streaming</td>
-                            <td class="check">✓ Built-in</td>
-                            <td class="check">✓ Built-in</td>
-                            <td class="partial">⚡ Mux / Vimeo</td>
+                            <td><strong>artists</strong></td>
+                            <td>id, name, slug, bio, image, decade, genre</td>
+                            <td>→ videos, albums, fan_boards</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Video Library (Decade/Genre/Band)</td>
-                            <td class="partial">⚠️ Limited</td>
-                            <td class="partial">⚠️ Limited</td>
-                            <td class="check">✓ Full control</td>
+                            <td><strong>videos</strong></td>
+                            <td>id, title, youtube_id, artist_id, decade, genre, duration</td>
+                            <td>→ artists, playlists</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Subscriptions / Paywall</td>
-                            <td class="check">✓ Built-in</td>
-                            <td class="check">✓ Built-in</td>
-                            <td class="partial">⚡ Stripe</td>
+                            <td><strong>spaces</strong></td>
+                            <td>id, name, slug, description, type, access_tier</td>
+                            <td>→ posts</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Merch Store</td>
-                            <td class="no">✗ Link out only</td>
-                            <td class="no">✗ Link out only</td>
-                            <td class="check">✓ Shopify / Custom</td>
+                            <td><strong>posts</strong></td>
+                            <td>id, user_id, space_id, title, content, media, pinned</td>
+                            <td>→ users, spaces, comments, reactions</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Custom Fan Boards</td>
-                            <td class="no">✗ Not flexible</td>
-                            <td class="partial">⚠️ Spaces (hacky)</td>
-                            <td class="check">✓ Full control</td>
+                            <td><strong>comments</strong></td>
+                            <td>id, post_id, user_id, content, parent_id</td>
+                            <td>→ posts, users (threaded)</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Artist Pages</td>
-                            <td class="no">✗ Not supported</td>
-                            <td class="partial">⚠️ Member profiles</td>
-                            <td class="check">✓ Custom design</td>
+                            <td><strong>subscriptions</strong></td>
+                            <td>id, user_id, tier, stripe_id, status, expires_at</td>
+                            <td>→ users</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Competitions / Voting</td>
-                            <td class="no">✗ Not supported</td>
-                            <td class="no">✗ Not supported</td>
-                            <td class="check">✓ Build it</td>
+                            <td><strong>events</strong></td>
+                            <td>id, title, description, start_time, stream_url, access_tier</td>
+                            <td>→ attendees</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Music Streaming Integration</td>
-                            <td class="no">✗ Not supported</td>
-                            <td class="no">✗ Not supported</td>
-                            <td class="check">✓ Spotify embeds</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Full Brand Control</td>
-                            <td class="partial">⚠️ Limited</td>
-                            <td class="partial">⚠️ Limited</td>
-                            <td class="check">✓ 100% yours</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Monthly Platform Fee</td>
-                            <td class="partial">$89 - $399/mo</td>
-                            <td class="partial">$41 - $360/mo</td>
-                            <td class="check">$0 (hosting only)</td>
+                            <td><strong>competitions</strong></td>
+                            <td>id, title, type, options, votes, ends_at</td>
+                            <td>→ votes</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- Options -->
+        <!-- User Tiers -->
         <section>
-            <h2><span>🛤️</span> Your Options</h2>
-            <div class="options-grid">
-                <div class="option-card">
-                    <h3>Circle / Mighty</h3>
-                    <div class="price">$99 - $399 <span>/month</span></div>
-                    <ul>
-                        <li>Launch in 1-2 weeks</li>
-                        <li>Community features ready</li>
-                        <li>Built-in payments</li>
-                        <li>Live streaming included</li>
-                        <li>Low technical lift</li>
-                    </ul>
-                    <h4>Limitations</h4>
-                    <ul class="cons">
-                        <li>No custom video taxonomy</li>
-                        <li>No artist pages</li>
-                        <li>No voting/competitions</li>
-                        <li>Platform takes % of revenue</li>
-                        <li>You don't own the platform</li>
-                    </ul>
-                </div>
-
-                <div class="option-card recommended">
-                    <h3>Hybrid Approach</h3>
-                    <div class="price">$5-10K <span>+ $99/mo</span></div>
-                    <ul>
-                        <li>Start with Mighty Networks</li>
-                        <li>Build custom video library</li>
-                        <li>Add artist pages separately</li>
-                        <li>Validate demand first</li>
-                        <li>Migrate later if needed</li>
-                    </ul>
-                    <h4>Best For</h4>
-                    <ul>
-                        <li>Testing the market</li>
-                        <li>Limited initial budget</li>
-                        <li>Quick launch needed</li>
-                        <li>Uncertain feature priorities</li>
-                    </ul>
-                </div>
-
-                <div class="option-card">
-                    <h3>Full Custom Build</h3>
-                    <div class="price">$15-25K <span>one-time</span></div>
-                    <ul>
-                        <li>100% your vision</li>
-                        <li>Full brand control</li>
-                        <li>No platform fees</li>
-                        <li>Own all your data</li>
-                        <li>Unlimited customization</li>
-                    </ul>
-                    <h4>Requirements</h4>
-                    <ul class="cons">
-                        <li>2-3 month build time</li>
-                        <li>Higher upfront cost</li>
-                        <li>Need clear requirements</li>
-                        <li>Ongoing maintenance</li>
-                    </ul>
-                </div>
+            <h2><span>👥</span> Membership Tiers</h2>
+            <div class="table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tier</th>
+                            <th>Access</th>
+                            <th>Features</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Free</strong></td>
+                            <td>Public spaces, limited video library</td>
+                            <td>Browse, comment, basic profile</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Member</strong></td>
+                            <td>All spaces, full video library</td>
+                            <td>+ DMs, voting, playlists, no ads</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VIP</strong></td>
+                            <td>Everything + exclusive content</td>
+                            <td>+ Live events, early access, merch discounts, badges</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
-        <!-- Timeline -->
+        <!-- Page Structure -->
         <section>
-            <h2><span>📅</span> Recommended Timeline (Custom Build)</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">1</div>
-                    <div class="timeline-content">
-                        <h4>Discovery & Design</h4>
-                        <div class="duration">Weeks 1-2</div>
-                        <p>Define requirements, create wireframes, design system, and visual mockups.</p>
-                        <ul>
-                            <li>Finalize feature list and priorities</li>
-                            <li>Design homepage, artist pages, video library</li>
-                            <li>Plan database schema (artists, videos, users, subscriptions)</li>
-                            <li>Set up project infrastructure</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">2</div>
-                    <div class="timeline-content">
-                        <h4>Core Platform</h4>
-                        <div class="duration">Weeks 3-5</div>
-                        <p>Build authentication, user profiles, and community features.</p>
-                        <ul>
-                            <li>User registration and login (email + social)</li>
-                            <li>Profile pages and settings</li>
-                            <li>Community posts, comments, likes</li>
-                            <li>Fan boards with categories</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">3</div>
-                    <div class="timeline-content">
-                        <h4>Content & Video Library</h4>
-                        <div class="duration">Weeks 6-7</div>
-                        <p>Build the video archive with decade/genre/band taxonomy.</p>
-                        <ul>
-                            <li>Video database and embeds (YouTube/Vimeo)</li>
-                            <li>Browse by decade, genre, band</li>
-                            <li>Search functionality</li>
-                            <li>Artist pages with bios and discographies</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">4</div>
-                    <div class="timeline-content">
-                        <h4>Monetization</h4>
-                        <div class="duration">Weeks 8-9</div>
-                        <p>Add subscriptions, paywalls, and store integration.</p>
-                        <ul>
-                            <li>Stripe subscription tiers (Free, Pro, VIP)</li>
-                            <li>Paywalled content sections</li>
-                            <li>Merch store (Shopify embed or custom)</li>
-                            <li>Member dashboard</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">5</div>
-                    <div class="timeline-content">
-                        <h4>Live & Engagement</h4>
-                        <div class="duration">Weeks 10-11</div>
-                        <p>Add live streaming, voting, and engagement features.</p>
-                        <ul>
-                            <li>Live streaming integration (Mux or Vimeo)</li>
-                            <li>Event calendar and notifications</li>
-                            <li>Competitions and voting system</li>
-                            <li>Leaderboards and badges</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">6</div>
-                    <div class="timeline-content">
-                        <h4>Launch & Polish</h4>
-                        <div class="duration">Week 12</div>
-                        <p>Testing, bug fixes, and go-live.</p>
-                        <ul>
-                            <li>QA testing across devices</li>
-                            <li>Performance optimization</li>
-                            <li>Analytics setup (GA4, Mixpanel)</li>
-                            <li>Soft launch → Full launch</li>
-                        </ul>
-                    </div>
-                </div>
+            <h2><span>📄</span> Site Map</h2>
+            <div class="list-card">
+                <ul>
+                    <li>
+                        <span class="icon">🏠</span>
+                        <div class="content">
+                            <strong>/</strong>
+                            <span>Homepage — featured content, trending, activity feed</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">🎬</span>
+                        <div class="content">
+                            <strong>/videos</strong>
+                            <span>Video library — browse by decade, genre, artist</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">🎤</span>
+                        <div class="content">
+                            <strong>/artists</strong>
+                            <span>Artist directory — A-Z, by genre, by decade</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">🎤</span>
+                        <div class="content">
+                            <strong>/artists/[slug]</strong>
+                            <span>Artist page — bio, videos, interviews, fan board</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">💬</span>
+                        <div class="content">
+                            <strong>/community</strong>
+                            <span>All spaces — discussions, fan boards, announcements</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">💬</span>
+                        <div class="content">
+                            <strong>/community/[space]</strong>
+                            <span>Individual space — posts, pinned content</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">📺</span>
+                        <div class="content">
+                            <strong>/live</strong>
+                            <span>Live events — schedule, current streams</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">🏆</span>
+                        <div class="content">
+                            <strong>/vote</strong>
+                            <span>Competitions — active polls, brackets, leaderboards</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">🛍️</span>
+                        <div class="content">
+                            <strong>/store</strong>
+                            <span>Merch store — products, cart, checkout</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">👤</span>
+                        <div class="content">
+                            <strong>/profile</strong>
+                            <span>User profile — settings, subscription, activity</span>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </section>
 
-        <!-- Budget -->
+        <!-- Build Phases -->
         <section>
-            <h2><span>💰</span> Investment Breakdown</h2>
-            <div class="budget-card">
-                <div class="budget-grid">
-                    <div class="budget-item">
-                        <h4>MVP Development</h4>
-                        <div class="amount">$15-25K</div>
-                        <p>Full custom platform with all core features. One-time cost.</p>
-                    </div>
-                    <div class="budget-item">
-                        <h4>Monthly Hosting</h4>
-                        <div class="amount">$50-200 <span>/mo</span></div>
-                        <p>Vercel + Supabase + CDN. Scales with traffic.</p>
-                    </div>
-                    <div class="budget-item">
-                        <h4>Live Streaming</h4>
-                        <div class="amount">$100-500 <span>/mo</span></div>
-                        <p>Mux or Vimeo OTT. Usage-based pricing.</p>
-                    </div>
-                    <div class="budget-item">
-                        <h4>Maintenance</h4>
-                        <div class="amount">$500-1K <span>/mo</span></div>
-                        <p>Bug fixes, updates, minor features. Optional retainer.</p>
-                    </div>
+            <h2><span>📅</span> Build Phases</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Phase 1: Foundation</h4>
+                    <ul>
+                        <li>Auth (email + social)</li>
+                        <li>User profiles</li>
+                        <li>Spaces / posts / comments</li>
+                        <li>Basic admin panel</li>
+                    </ul>
                 </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section>
-            <div class="cta-section">
-                <h2>Ready to Build?</h2>
-                <p>Let's turn this vision into reality. We can start with a detailed discovery session to nail down requirements and timeline.</p>
-                <a href="#" class="cta-button">Let's Talk →</a>
+                <div class="feature-card">
+                    <h4>Phase 2: Content</h4>
+                    <ul>
+                        <li>Video library + taxonomy</li>
+                        <li>Artist pages</li>
+                        <li>Search functionality</li>
+                        <li>Playlists / favorites</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>Phase 3: Monetization</h4>
+                    <ul>
+                        <li>Stripe subscriptions</li>
+                        <li>Tiered access / paywalls</li>
+                        <li>Merch store integration</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>Phase 4: Engagement</h4>
+                    <ul>
+                        <li>Live streaming (Mux)</li>
+                        <li>Competitions / voting</li>
+                        <li>DMs / messaging</li>
+                        <li>Notifications</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <footer>
-            <p>Prepared by GullStack • February 2026</p>
+            <p>Music.com Platform Notes — February 2026</p>
         </footer>
     </div>
 </body>
